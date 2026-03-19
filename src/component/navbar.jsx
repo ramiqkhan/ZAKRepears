@@ -79,7 +79,7 @@ function Navbar() {
         <div className="lg:hidden bg-[#050a14] border-t border-gray-800/50">
           <div className="flex flex-col items-center py-4 gap-4 text-sm font-medium uppercase">
             <NavLink to="/" className={activeLink} onClick={() => setMobileOpen(false)}>Home</NavLink>
-            <NavLink to="/services" className={activeLink} onClick={() => setMobileOpen(false)}>Services</NavLink>
+            <NavLink to="/service" className={activeLink} onClick={() => setMobileOpen(false)}>Services</NavLink>
             <NavLink to="/about" className={activeLink} onClick={() => setMobileOpen(false)}>About Us</NavLink>
 
             <div className="flex items-center gap-1 cursor-pointer hover:text-blue-400 py-2">

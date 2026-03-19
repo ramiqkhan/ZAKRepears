@@ -1,97 +1,111 @@
 import React from 'react';
-import { MapPin, Home, Clock, ChevronRight, Phone } from 'lucide-react';
-// Assets folder se aapka logo image
+import { 
+  MapPin, Phone, Mail, Facebook, 
+  Instagram, Twitter, ChevronRight 
+} from 'lucide-react';
+// Assets folder se aapka logo
 import logoImage from '../assets/logo.jpeg'; 
 
 const Footer = () => {
-  const citiesLeft = ["Dallas", "Dallas", "Austin", "San Antonio"];
-  const citiesRight = ["Houston", "Dallas", "Austin", "San Antonio"];
-
   return (
-    <footer className="relative w-full bg-[#050a14] text-white py-16 px-6 overflow-hidden border-t border-blue-900/30">
-      
-      {/* Background Subtle Glow */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute top-1/2 left-[-10%] w-[50%] h-[300px] bg-blue-600/10 blur-[120px] rotate-12"></div>
-      </div>
+    <footer className="bg-[#050a14] pt-24 pb-12 px-6 border-t border-white/5 relative">
+      {/* Subtle Glow Effect at the bottom */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-64 bg-blue-600/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        
-        {/* --- Title Section (Lines + Text) --- */}
-        <div className="flex items-center justify-center gap-6 mb-16">
-          <div className="h-[1px] flex-grow max-w-[200px] bg-gradient-to-r from-transparent to-gray-600"></div>
-          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-center">
-            Our Service Areas
-          </h2>
-          <div className="h-[1px] flex-grow max-w-[200px] bg-gradient-to-l from-transparent to-gray-600"></div>
-        </div>
-
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           
-          {/* --- LEFT: Exact Logo Image from your assets --- */}
-          <div className="w-full lg:w-[45%] flex justify-center lg:justify-start">
-            <div className="relative group">
-              {/* Logo image with the blue glow effect from the reference */}
-              <img 
-                src={logoImage} 
-                alt="Houston Easy Repairs Logo" 
-                className="w-full max-w-[450px] h-auto object-contain drop-shadow-[0_0_30px_rgba(37,99,235,0.4)] transition-transform duration-500 group-hover:scale-105"
-              />
+          {/* Column 1: Brand Info & Logo */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <img src={logoImage} alt="Logo" className="w-12 h-12 rounded-lg object-cover border border-blue-500/20" />
+              <h3 className="text-2xl font-black uppercase tracking-tighter text-white">
+                Houston <span className="text-blue-500">Easy Repairs</span>
+              </h3>
             </div>
-          </div>
-
-          {/* --- RIGHT: Cities List Box --- */}
-          <div className="w-full lg:w-[50%] grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 bg-[#0a1221]/50 backdrop-blur-md rounded-3xl p-10 border border-white/10 shadow-2xl">
-            
-            {/* Left Column Cities */}
-            <div className="space-y-5">
-              {citiesLeft.map((city, index) => (
-                <div key={index} className="flex items-center gap-4 group cursor-pointer">
-                  <div className="text-blue-500 group-hover:scale-110 transition-transform">
-                    <MapPin size={24} fill="currentColor" fillOpacity={0.2} />
-                  </div>
-                  <span className="text-2xl font-bold text-gray-200 group-hover:text-white transition-colors">
-                    {city}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            {/* Right Column Cities */}
-            <div className="space-y-5 border-t md:border-t-0 md:border-l border-gray-700/50 pt-6 md:pt-0 md:pl-10">
-              {citiesRight.map((city, index) => (
-                <div key={index} className="flex items-center gap-4 group cursor-pointer">
-                  <div className="text-blue-500 group-hover:scale-110 transition-transform">
-                    {index % 2 === 0 ? <Home size={24} /> : <Clock size={24} />}
-                  </div>
-                  <span className="text-2xl font-bold text-gray-200 group-hover:text-white transition-colors">
-                    {city}
-                  </span>
+            <p className="text-gray-400 leading-relaxed font-medium">
+              Reliable home repair and maintenance services serving Rosenberg and the greater Houston area.
+            </p>
+            <div className="flex gap-4">
+              {[Facebook, Instagram, Twitter].map((Icon, i) => (
+                <div key={i} className="p-3 bg-white/5 rounded-xl text-blue-500 hover:bg-blue-600 hover:text-white transition-all cursor-pointer group shadow-lg">
+                  <Icon size={20} className="group-hover:scale-110 transition-transform" />
                 </div>
               ))}
             </div>
           </div>
 
+          {/* Column 2: Quick Links */}
+          <div className="space-y-6">
+            <h4 className="text-lg font-black uppercase tracking-widest text-white relative inline-block">
+              Quick Links
+              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-blue-600 rounded-full"></span>
+            </h4>
+            <ul className="space-y-4 pt-4 text-gray-400 font-bold">
+              {["Home", "About Us", "Services", "Contact"].map((link) => (
+                <li key={link} className="hover:text-blue-500 transition-colors cursor-pointer flex items-center gap-2 group">
+                  <ChevronRight size={14} className="text-blue-500 opacity-0 group-hover:opacity-100 -ml-4 group-hover:ml-0 transition-all" />
+                  {link}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Our Services */}
+          <div className="space-y-6">
+            <h4 className="text-lg font-black uppercase tracking-widest text-white relative inline-block">
+              Our Services
+              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-blue-600 rounded-full"></span>
+            </h4>
+            <ul className="space-y-4 pt-4 text-gray-400 font-bold">
+              {[
+                "Handyman Services", "Electrical Repairs", 
+                "Plumbing Repairs", "Property Maintenance", 
+                "Installation Services"
+              ].map((service) => (
+                <li key={service} className="hover:text-blue-500 transition-colors cursor-pointer flex items-center gap-2 group">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full group-hover:scale-150 transition-transform"></div>
+                  {service}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Location Info */}
+          <div className="space-y-6">
+            <h4 className="text-lg font-black uppercase tracking-widest text-white relative inline-block">
+              Get In Touch
+              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-blue-600 rounded-full"></span>
+            </h4>
+            <div className="space-y-5 pt-4 text-gray-400">
+              <div className="flex items-start gap-4 group">
+                <MapPin size={20} className="text-blue-500 shrink-0 group-hover:animate-bounce" />
+                <p className="font-bold leading-tight">4925 Avenue H Suite A, <br />Rosenberg, TX 77471</p>
+              </div>
+              <div className="flex items-center gap-4 group">
+                <Phone size={20} className="text-blue-500 shrink-0 group-hover:rotate-12 transition-transform" />
+                <p className="font-bold">+1 (281) 250-2592</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <Mail size={20} className="text-blue-500 shrink-0" />
+                <p className="font-bold truncate text-sm">contact@houstoneasyrepairs.com</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* --- BOTTOM: Action Buttons --- */}
-        <div className="flex flex-wrap justify-center gap-6 mt-20">
-          <button className="flex items-center gap-3 bg-[#0042c2] hover:bg-blue-700 text-white px-10 py-4 rounded-xl font-black text-xl shadow-xl transition-all active:scale-95 uppercase tracking-wide">
-            <Phone size={22} fill="currentColor" />
-            Call Here
-          </button>
-          
-          <button className="flex items-center gap-3 bg-[#005eff] hover:bg-blue-600 text-white px-10 py-4 rounded-xl font-black text-xl shadow-xl shadow-blue-500/20 transition-all active:scale-95 uppercase tracking-wide">
-            Book Appointment
-            <ChevronRight size={26} strokeWidth={3} />
-          </button>
+        {/* Bottom Copyright */}
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-gray-500 font-bold uppercase tracking-widest text-[10px] md:text-xs">
+            © 2026 Houston Easy Repairs. All Rights Reserved.
+          </p>
+          <div className="flex items-center gap-2">
+            <div className="h-[1px] w-8 bg-white/10"></div>
+            <p className="text-gray-600 text-[10px] font-black uppercase tracking-[0.3em]">
+              Designed with Precision
+            </p>
+          </div>
         </div>
-
-      </div>
-      
-      {/* Sub-footer */}
-      <div className="mt-24 pt-8 border-t border-gray-900 text-center text-gray-600 text-[10px] font-bold tracking-[0.3em] uppercase">
-        © 2026 Houston Easy Repairs • Trusted Home Maintenance
       </div>
     </footer>
   );
