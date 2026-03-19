@@ -4,6 +4,7 @@ import {
   Facebook, Instagram, Twitter, Linkedin,
   CheckCircle2, Mail, MessageSquare
 } from 'lucide-react';
+import BookingForm from '../component/bookurservice';
 
 const ContactFooter = () => {
   return (
@@ -70,33 +71,7 @@ const ContactFooter = () => {
 
             {/* Right side: Contact Form (7 Columns) */}
             <div className="lg:col-span-7">
-              <div className="bg-[#0a1221] p-8 md:p-12 rounded-[2.5rem] border border-blue-500/20 shadow-2xl relative overflow-hidden">
-                <div className="relative z-10">
-                  <h2 className="text-3xl font-black uppercase tracking-tight mb-2">Send Us a <span className="text-blue-500">Message</span></h2>
-                  <p className="text-gray-400 mb-10 font-medium">Fill out the form and our team will get back to you shortly.</p>
-                  
-                  <form className="space-y-5">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                      <input type="text" placeholder="Your Name" className="w-full bg-[#050a14] border border-white/10 rounded-2xl p-4 focus:border-blue-500 focus:outline-none transition-all font-bold placeholder:text-gray-600 text-white" />
-                      <input type="tel" placeholder="Phone Number" className="w-full bg-[#050a14] border border-white/10 rounded-2xl p-4 focus:border-blue-500 focus:outline-none transition-all font-bold placeholder:text-gray-600 text-white" />
-                    </div>
-                    <input type="email" placeholder="Email Address" className="w-full bg-[#050a14] border border-white/10 rounded-2xl p-4 focus:border-blue-500 focus:outline-none transition-all font-bold placeholder:text-gray-600 text-white" />
-                    <select className="w-full bg-[#050a14] border border-white/10 rounded-2xl p-4 focus:border-blue-500 focus:outline-none transition-all font-bold text-gray-400">
-                      <option>Service Required</option>
-                      <option>Home Repair & Handyman</option>
-                      <option>Electrical Repairs</option>
-                      <option>Plumbing Repairs</option>
-                      <option>Property Maintenance</option>
-                      <option>Installation Services</option>
-                    </select>
-                    <textarea placeholder="Your Message" rows="4" className="w-full bg-[#050a14] border border-white/10 rounded-2xl p-4 focus:border-blue-500 focus:outline-none transition-all font-bold placeholder:text-gray-600 text-white"></textarea>
-                    
-                    <button className="w-full bg-blue-600 hover:bg-blue-700 text-white p-5 rounded-2xl font-black uppercase tracking-widest flex items-center justify-center gap-3 transition-all active:scale-95 shadow-xl shadow-blue-600/20">
-                      <Send size={20} /> Send Message
-                    </button>
-                  </form>
-                </div>
-              </div>
+         <BookingForm/>
             </div>
           </div>
         </div>

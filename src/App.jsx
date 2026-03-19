@@ -3,9 +3,9 @@ import Navbar from "./component/navbar";
 import Footer from "./component/footer";
 
 import Home from "../src/pages/home";
-import Service from "./pages/service";
 import About from "./pages/about";
 import ContactFooter from "./pages/contactus";
+import Service from "./pages/service";
 
 
 
