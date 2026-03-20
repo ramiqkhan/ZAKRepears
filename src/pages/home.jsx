@@ -22,6 +22,13 @@ const Home = () => {
   return (
     <div className="w-full bg-[#050a14] min-h-screen text-white font-sans overflow-x-hidden">
       
+      <section className="w-full mt-25 border-b border-white/10">
+        <div className="w-full">
+          <div className="w-full transition-all duration-300">
+            <ProfessionalServicePage />
+          </div>
+        </div>
+      </section>
       {/* --- HERO SECTION --- */}
       <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 lg:px-8 border-b border-white/10">
         
@@ -82,13 +89,6 @@ const Home = () => {
       </section>
 
       {/* --- SECOND SECTION (FULL WIDTH FIXED) --- */}
-      <section className="w-full border-b border-white/10">
-        <div className="w-full">
-          <div className="w-full transition-all duration-300">
-            <ProfessionalServicePage />
-          </div>
-        </div>
-      </section>
 
       {/* --- SERVICE AREAS --- */}
       <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">

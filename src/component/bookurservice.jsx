@@ -16,23 +16,24 @@ const ProfessionalServicePage = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16">
           
           {/* LEFT SIDE (Content) */}
-          <div className="w-full lg:flex-1 space-y-6 sm:space-y-8 text-center lg:text-left">
+          <div className="w-full lg:flex-1 space-y-6 sm:space-y-8  lg:text-left">
             <div className="space-y-4">
-              <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                Professional Home Repair <br />
-                <span className="font-light opacity-90">& Maintenance Services</span>
+              <h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                Professional Home Repair  
+                <span className="font-light opacity-90"> & Maintenance Services</span>
               </h1>
 
               {/* Badges/Services: Mobile par wrap honge */}
-              <div className="flex flex-wrap justify-center lg:justify-start gap-x-2 sm:gap-x-3 gap-y-2 text-gray-400 text-sm sm:text-base md:text-lg font-medium">
-                <span>Plumbing</span>
-                <span className="text-blue-500">•</span>
-                <span>Electrical</span>
-                <span className="text-blue-500">•</span>
-                <span>Remodeling</span>
-                <span className="text-blue-500">•</span>
-                <span>Garage Door Repair</span>
-              </div>
+           {/* Badges/Services: Start from left on mobile, can stay left or center on desktop */}
+<div className="flex flex-wrap justify-start gap-x-2 sm:gap-x-3 gap-y-2 text-gray-400 text-sm sm:text-base md:text-lg font-medium">
+  <span>Plumbing</span>
+  <span className="text-blue-500">•</span>
+  <span>Electrical</span>
+  <span className="text-blue-500">•</span>
+  <span>Remodeling</span>
+  <span className="text-blue-500">•</span>
+  <span>Garage Door Repair</span>
+</div>
             </div>
 
             {/* Top Buttons: Mobile par 2 columns, Desktop par auto-width */}
