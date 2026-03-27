@@ -37,14 +37,7 @@ const ProfessionalServicePage = () => {
               <span>Painting Services</span>
               <span className="text-blue-500">•</span>
               <span>Roofing Services</span>
-                  <span className="text-blue-500">•</span>
-              <span>Interior Repairs & Touch-Ups</span>
-                  <span className="text-blue-500">•</span>
-              <span>Accent Walls</span>
-                  <span className="text-blue-500">•</span>
-              <span>Carpentry</span>
-               <span className="text-blue-500">•</span>
-              <span>Drywall Installation & Repair</span>
+         
             </div>
 
             {/* ✅ buttons same line mobile */}

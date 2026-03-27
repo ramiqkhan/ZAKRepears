@@ -81,9 +81,7 @@ const ContactFooter = () => {
                     <p className="text-gray-300 font-bold text-sm sm:text-base">
                       7 days on service
                     </p>
-                    <p className="text-gray-500 font-bold italic text-xs sm:text-sm">
-                      Sunday: Closed
-                    </p>
+                
                   </div>
                 </div>
               </div>

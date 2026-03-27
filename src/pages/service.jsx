@@ -4,7 +4,7 @@ import {
   ChevronDown, CheckCircle2, Paintbrush, Layers, Maximize,
   Wind, Home
 } from 'lucide-react';
-
+import { Link } from "react-router-dom";
 const Service = () => {
   const [activeAccordion, setActiveAccordion] = useState(0);
 
@@ -167,9 +167,10 @@ const Service = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter mb-8">
             Ready To Start Your Project?
           </h2>
-          <button className="bg-white text-blue-600 px-12 sm:px-14 py-4 sm:py-5 rounded-2xl font-black uppercase text-lg sm:text-xl shadow-2xl hover:bg-gray-100 transition-all active:scale-95">
+           <Link
+  to="/contact"className="bg-white text-blue-600 px-12 sm:px-14 py-4 sm:py-5 rounded-2xl font-black uppercase text-lg sm:text-xl shadow-2xl hover:bg-gray-100 transition-all active:scale-95">
             Book Service Now
-          </button>
+          </Link>
         </div>
       </div>
     </div>

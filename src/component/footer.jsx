@@ -59,9 +59,9 @@ const Footer = () => {
             </h4>
             <ul className="space-y-4 pt-4 text-gray-400 font-bold">
               {[
-                "Handyman Services", "Electrical Repairs", 
-                "Plumbing Repairs", "Property Maintenance", 
-                "Installation Services"
+                "Electrical", "Plumbing ",  
+                "HVAC", "Painting Services", 
+                "Roofing Services","Carpentry", "Drywall Repair", "Accent Walls"," Interior Repairs & Touch-Ups"
               ].map((service) => (
                 <li key={service} className="hover:text-blue-500 transition-colors cursor-pointer flex items-center gap-2 group">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full group-hover:scale-150 transition-transform"></div>
