@@ -4,7 +4,7 @@ import {
   Shield
 } from 'lucide-react';
 import ProfessionalServicePage from '../component/bookurservice';
-
+import { Link } from "react-router-dom";
 const Home = () => {
   const whyChooseUs = [
     "Experienced and skilled technicians",
@@ -14,7 +14,7 @@ const Home = () => {
     "Commitment to customer satisfaction"
   ];
 
-  const serviceAreas = ["Rosenberg", "Houston", "Richmond", "Sugar Land", "Katy", "Surrounding TX"];
+  const serviceAreas = ["Rosenberg TX", "Houston TX", "Richmond TX", "Sugar Land TX", "Katy TX"];
 
   return (
     <div className="w-full pt-10 min-h-screen bg-[#050a14] text-white font-sans overflow-x-hidden">
@@ -54,9 +54,12 @@ const Home = () => {
                 <Phone size={18} /> Call Today
               </a>
 
-              <button className="bg-white/10 border border-white/20 px-6 py-3 rounded-xl font-bold hover:bg-white/20 transition">
-                Our Services
-              </button>
+        <Link
+  to="/services"
+  className="bg-white/10 border border-white/20 px-6 py-3 rounded-xl font-bold hover:bg-white/20 transition inline-block text-center"
+>
+  Our Services
+</Link>
             </div>
           </div>
 

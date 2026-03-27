@@ -27,7 +27,7 @@ function Navbar() {
   };
 
   const locations = [
-    "Rosenberg", "Houston", "Richmond", "Sugar Land", "Katy", "Surrounding TX"
+    "Rosenberg TX", "Houston TX", "Richmond TX", "Sugar Land TX", "Katy TX"
   ];
 
   return (

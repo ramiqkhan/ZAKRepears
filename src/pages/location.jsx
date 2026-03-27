@@ -4,12 +4,12 @@ import HeroForm from '../component/Home/HeroForm';
 
 const Locations = () => {
   const cityList = [
-    "Rosenberg", 
-    "Houston", 
-    "Richmond", 
-    "Sugar Land", 
-    "Katy", 
-    "Surrounding TX"
+    "Rosenberg TX", 
+    "Houston TX", 
+    "Richmond TX", 
+    "Sugar Land TX", 
+    "Katy TX", 
+  
   ];
 
   return (

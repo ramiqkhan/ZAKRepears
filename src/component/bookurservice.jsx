@@ -37,6 +37,14 @@ const ProfessionalServicePage = () => {
               <span>Painting Services</span>
               <span className="text-blue-500">•</span>
               <span>Roofing Services</span>
+                  <span className="text-blue-500">•</span>
+              <span>Interior Repairs & Touch-Ups</span>
+                  <span className="text-blue-500">•</span>
+              <span>Accent Walls</span>
+                  <span className="text-blue-500">•</span>
+              <span>Carpentry</span>
+               <span className="text-blue-500">•</span>
+              <span>Drywall Installation & Repair</span>
             </div>
 
             {/* ✅ buttons same line mobile */}
@@ -82,9 +90,15 @@ const ProfessionalServicePage = () => {
   
   <select className="w-full bg-white text-gray-800 rounded-lg py-3 pl-11 pr-10 font-semibold outline-none appearance-none">
     <option>Select Service</option>
-    <option>Home Repair</option>
     <option>Electrical</option>
     <option>Plumbing</option>
+        <option>HVAC</option>
+    <option>Painting Services</option>
+    <option>Roofing Services</option>
+    <option>Interior Repairs & Touch-Ups</option>
+      <option>Accent Walls</option>
+    <option>Carpentry</option>
+    <option>Drywall Installation & Repair</option>
   </select>
 
   <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 pointer-events-none" size={18} />
@@ -131,10 +145,11 @@ const ProfessionalServicePage = () => {
                   Call Now
                 </a>
 
-                <button className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-b from-[#1e86ff] to-[#123597] py-3 rounded-lg font-bold text-sm hover:brightness-110 transition">
+                  <Link
+  to="/contact" className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-b from-[#1e86ff] to-[#123597] py-3 rounded-lg font-bold text-sm hover:brightness-110 transition">
                   <User size={14} />
                   Book Service
-                </button>
+                </Link>
 
               </div>
 
