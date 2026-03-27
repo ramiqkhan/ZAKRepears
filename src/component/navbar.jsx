@@ -6,8 +6,8 @@ import { FaPhoneAlt, FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
 function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [desktopLocationOpen, setDesktopLocationOpen] = useState(false); // Desktop hover dropdown
-  const [mobileLocationOpen, setMobileLocationOpen] = useState(false);   // Mobile toggle dropdown
+  const [desktopLocationOpen, setDesktopLocationOpen] = useState(false);
+  const [mobileLocationOpen, setMobileLocationOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -26,12 +26,8 @@ function Navbar() {
         }`;
   };
 
-  // Sample locations
   const locations = [
-    "Rosenberg, TX",
-    "Houston, TX",
-    "Sugar Land, TX",
-    "Katy, TX",
+    "Rosenberg", "Houston", "Richmond", "Sugar Land", "Katy", "Surrounding TX"
   ];
 
   return (
@@ -64,23 +60,25 @@ function Navbar() {
 
             {/* Desktop Locations Dropdown */}
             <div 
-              className="flex flex-col relative"
+              className="relative"
               onMouseEnter={() => setDesktopLocationOpen(true)}
               onMouseLeave={() => setDesktopLocationOpen(false)}
             >
-              <button className={`flex items-center gap-1 font-bold border-b-2 pb-1 border-transparent transition-all duration-300 ${
+              <button className={`flex items-center gap-1 font-bold border-b-2 pb-1 border-transparent transition-all duration-300 h-full ${
                 isScrolled ? "text-white hover:text-blue-400" : "text-gray-700 hover:text-blue-600"
               }`}>
-                Locations <FaChevronDown className="text-xs opacity-70" />
+                Locations <FaChevronDown className={`text-xs opacity-70 transition-transform ${desktopLocationOpen ? 'rotate-180' : ''}`} />
               </button>
 
               {desktopLocationOpen && (
-                <div className="absolute top-full left-0  w-48 bg-[#050a14] rounded-lg shadow-lg overflow-hidden border border-white/10 z-50">
+                <div className="absolute top-[20px] left-0 w-52 bg-[#0a1221] rounded-xl shadow-2xl overflow-hidden border border-white/10 z-50 py-2">
                   {locations.map((loc, i) => (
                     <Link
                       key={i}
-                      to={`/locations/${loc.toLowerCase().replace(/ /g, "-")}`}
-                      className="block px-4 py-2 text-white hover:bg-blue-600/20 transition-colors"
+                      /* PATH UPDATED HERE */
+                      to={`/location/${loc.toLowerCase().replace(/ /g, "-")}`}
+                      className="block px-5 py-3 text-white text-xs font-bold uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all"
+                      onClick={() => setDesktopLocationOpen(false)}
                     >
                       {loc}
                     </Link>
@@ -96,7 +94,7 @@ function Navbar() {
           <div className="hidden lg:flex items-center gap-4">
             <Link
               to="/contact"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition shadow-lg shadow-blue-600/20"
             >
               Book Service
             </Link>
@@ -117,8 +115,8 @@ function Navbar() {
               onClick={() => setMobileOpen(!mobileOpen)}
               className={`p-2.5 rounded-xl transition-all duration-300 border flex items-center justify-center
                 ${isScrolled
-                  ? "bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white/20 shadow-lg"
-                  : "bg-blue-600/10 backdrop-blur-md border-blue-600/20 text-blue-600 hover:bg-blue-600/20 shadow-sm"
+                  ? "bg-white/10 backdrop-blur-md border-white/20 text-white"
+                  : "bg-blue-600/10 border-blue-600/20 text-blue-600"
                 }`}
             >
               {mobileOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
@@ -130,13 +128,13 @@ function Navbar() {
       {/* MOBILE MENU */}
       {mobileOpen && (
         <div 
-          className={`lg:hidden fixed inset-x-0 top-24 lg:top-28 backdrop-blur-xl border-t transition-all duration-300 shadow-2xl
+          className={`lg:hidden fixed inset-x-0 top-24 backdrop-blur-xl border-t transition-all duration-300 shadow-2xl h-screen
             ${isScrolled 
-              ? "bg-[#050a14]/90 border-white/10" 
-              : "bg-white/90 border-gray-200"
+              ? "bg-[#050a14]/95 border-white/10" 
+              : "bg-white/95 border-gray-200"
             }`}
         >
-          <div className={`flex flex-col px-6 py-8 gap-6 text-sm font-bold uppercase tracking-widest
+          <div className={`flex flex-col px-8 py-10 gap-6 text-sm font-bold uppercase tracking-widest
             ${isScrolled ? "text-white" : "text-gray-800"}`}
           >
             <NavLink to="/" onClick={() => setMobileOpen(false)}>Home</NavLink>
@@ -144,20 +142,24 @@ function Navbar() {
             <NavLink to="/about" onClick={() => setMobileOpen(false)}>About</NavLink>
 
             {/* Mobile Locations Dropdown */}
-            <div className="flex mt- flex-col">
+            <div>
               <button
                 onClick={() => setMobileLocationOpen(!mobileLocationOpen)}
-                className="flex items-center justify-between px-0 py-2 font-bold"
+                className="flex items-center justify-between w-full py-2 font-bold border-b border-transparent"
               >
                 Locations <FaChevronDown className={`transition-transform ${mobileLocationOpen ? "rotate-180" : ""}`} />
               </button>
+              
               {mobileLocationOpen && (
-                <div className="flex flex-col ml-4 mt-1 gap-1">
+                <div className="flex flex-col mt-3 gap-2 pl-4">
                   {locations.map((loc, i) => (
                     <Link
                       key={i}
-                      to={`/locations/${loc.toLowerCase().replace(/ /g, "-")}`}
-                      className="block px-4 py-2 text-white bg-[#0a1221] rounded-lg hover:bg-blue-600/20"
+                      /* PATH UPDATED HERE */
+                      to={`/location/${loc.toLowerCase().replace(/ /g, "-")}`}
+                      className={`block py-3 px-4 rounded-xl transition-colors ${
+                        isScrolled ? "bg-white/5 hover:bg-blue-600" : "bg-gray-100 hover:bg-blue-600 hover:text-white"
+                      }`}
                       onClick={() => {
                         setMobileOpen(false);
                         setMobileLocationOpen(false);
@@ -173,8 +175,8 @@ function Navbar() {
             <NavLink to="/contact" onClick={() => setMobileOpen(false)}>Contact</NavLink>
 
             <Link
-              to="/book-service"
-              className="bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl text-center mt-4 shadow-lg shadow-blue-600/30 transition-all active:scale-95"
+              to="/contact"
+              className="bg-blue-600 text-white py-4 rounded-2xl text-center mt-6 shadow-xl shadow-blue-600/30 transition-transform active:scale-95"
               onClick={() => setMobileOpen(false)}
             >
               Book Service
