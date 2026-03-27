@@ -6,11 +6,11 @@ import { FaPhoneAlt, FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
 function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [desktopLocationOpen, setDesktopLocationOpen] = useState(false); // Desktop hover dropdown
+  const [mobileLocationOpen, setMobileLocationOpen] = useState(false);   // Mobile toggle dropdown
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -26,20 +26,28 @@ function Navbar() {
         }`;
   };
 
+  // Sample locations
+  const locations = [
+    "Rosenberg, TX",
+    "Houston, TX",
+    "Sugar Land, TX",
+    "Katy, TX",
+  ];
+
   return (
-<nav
-  className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-    isScrolled
-      ? "h-24 lg:h-28 bg-[#050a14]/80 backdrop-blur-md border-b border-white/10"
-      : "h-24 lg:h-28 bg-white border-b border-gray-200"
-  }`}
->
-      <div className="max-w-7xl mx-auto px-4 sm:px-6  lg:px-8">
-      <div className="flex items-center justify-between h-full">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        isScrolled
+          ? "h-24 lg:h-28 bg-[#050a14]/80 backdrop-blur-md border-b border-white/10"
+          : "h-24 lg:h-28 bg-white border-b border-gray-200"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-full">
           
-          {/* LOGO - SAME SIZE (NO CHANGE) */}
+          {/* LOGO */}
           <Link to="/" className="flex items-center">
-         <div className="hover:scale-105 transition-transform duration-300 -mt-4 lg:-mt-4">
+            <div className="hover:scale-105 transition-transform duration-300 -mt-4 lg:-mt-4">
               <img
                 className="h-32 w-auto lg:h-[156px] object-contain transition-all duration-500"
                 src={logo}
@@ -49,30 +57,45 @@ function Navbar() {
           </Link>
 
           {/* DESKTOP MENU */}
-          <div className="hidden lg:flex items-center gap-8 text-sm uppercase tracking-wider">
+          <div className="hidden lg:flex items-center gap-8 text-sm uppercase tracking-wider relative">
             <NavLink to="/" className={activeLink}>Home</NavLink>
             <NavLink to="/services" className={activeLink}>Services</NavLink>
             <NavLink to="/about" className={activeLink}>About</NavLink>
-            
-            <div className={`flex items-center gap-1 cursor-pointer font-bold border-b-2 pb-1 border-transparent transition-all duration-300 ${
-              isScrolled ? "text-white hover:text-blue-400" : "text-gray-700 hover:text-blue-600"
-            }`}>
-              Gallery <FaChevronDown className="text-xs opacity-70" />
-            </div>
 
-            <div className={`flex items-center gap-1 cursor-pointer font-bold border-b-2 pb-1 border-transparent transition-all duration-300 ${
-              isScrolled ? "text-white hover:text-blue-400" : "text-gray-700 hover:text-blue-600"
-            }`}>
-              Areas <FaChevronDown className="text-xs opacity-70" />
+            {/* Desktop Locations Dropdown */}
+            <div 
+              className="flex flex-col relative"
+              onMouseEnter={() => setDesktopLocationOpen(true)}
+              onMouseLeave={() => setDesktopLocationOpen(false)}
+            >
+              <button className={`flex items-center gap-1 font-bold border-b-2 pb-1 border-transparent transition-all duration-300 ${
+                isScrolled ? "text-white hover:text-blue-400" : "text-gray-700 hover:text-blue-600"
+              }`}>
+                Locations <FaChevronDown className="text-xs opacity-70" />
+              </button>
+
+              {desktopLocationOpen && (
+                <div className="absolute top-full left-0  w-48 bg-[#050a14] rounded-lg shadow-lg overflow-hidden border border-white/10 z-50">
+                  {locations.map((loc, i) => (
+                    <Link
+                      key={i}
+                      to={`/locations/${loc.toLowerCase().replace(/ /g, "-")}`}
+                      className="block px-4 py-2 text-white hover:bg-blue-600/20 transition-colors"
+                    >
+                      {loc}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
 
             <NavLink to="/contact" className={activeLink}>Contact</NavLink>
           </div>
 
-          {/* RIGHT SIDE */}
+          {/* RIGHT SIDE DESKTOP */}
           <div className="hidden lg:flex items-center gap-4">
             <Link
-              to="/book-service"
+              to="/contact"
               className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition"
             >
               Book Service
@@ -106,7 +129,7 @@ function Navbar() {
 
       {/* MOBILE MENU */}
       {mobileOpen && (
-      <div 
+        <div 
           className={`lg:hidden fixed inset-x-0 top-24 lg:top-28 backdrop-blur-xl border-t transition-all duration-300 shadow-2xl
             ${isScrolled 
               ? "bg-[#050a14]/90 border-white/10" 
@@ -116,29 +139,38 @@ function Navbar() {
           <div className={`flex flex-col px-6 py-8 gap-6 text-sm font-bold uppercase tracking-widest
             ${isScrolled ? "text-white" : "text-gray-800"}`}
           >
-            <NavLink 
-              to="/" 
-              className={`transition-colors ${isScrolled ? "hover:text-blue-400" : "hover:text-blue-600"}`}
-              onClick={() => setMobileOpen(false)}
-            >Home</NavLink>
-            
-            <NavLink 
-              to="/services" 
-              className={`transition-colors ${isScrolled ? "hover:text-blue-400" : "hover:text-blue-600"}`}
-              onClick={() => setMobileOpen(false)}
-            >Services</NavLink>
-            
-            <NavLink 
-              to="/about" 
-              className={`transition-colors ${isScrolled ? "hover:text-blue-400" : "hover:text-blue-600"}`}
-              onClick={() => setMobileOpen(false)}
-            >About</NavLink>
-            
-            <NavLink 
-              to="/contact" 
-              className={`transition-colors ${isScrolled ? "hover:text-blue-400" : "hover:text-blue-600"}`}
-              onClick={() => setMobileOpen(false)}
-            >Contact</NavLink>
+            <NavLink to="/" onClick={() => setMobileOpen(false)}>Home</NavLink>
+            <NavLink to="/services" onClick={() => setMobileOpen(false)}>Services</NavLink>
+            <NavLink to="/about" onClick={() => setMobileOpen(false)}>About</NavLink>
+
+            {/* Mobile Locations Dropdown */}
+            <div className="flex mt- flex-col">
+              <button
+                onClick={() => setMobileLocationOpen(!mobileLocationOpen)}
+                className="flex items-center justify-between px-0 py-2 font-bold"
+              >
+                Locations <FaChevronDown className={`transition-transform ${mobileLocationOpen ? "rotate-180" : ""}`} />
+              </button>
+              {mobileLocationOpen && (
+                <div className="flex flex-col ml-4 mt-1 gap-1">
+                  {locations.map((loc, i) => (
+                    <Link
+                      key={i}
+                      to={`/locations/${loc.toLowerCase().replace(/ /g, "-")}`}
+                      className="block px-4 py-2 text-white bg-[#0a1221] rounded-lg hover:bg-blue-600/20"
+                      onClick={() => {
+                        setMobileOpen(false);
+                        setMobileLocationOpen(false);
+                      }}
+                    >
+                      {loc}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <NavLink to="/contact" onClick={() => setMobileOpen(false)}>Contact</NavLink>
 
             <Link
               to="/book-service"

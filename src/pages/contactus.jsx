@@ -1,8 +1,5 @@
 import React from 'react';
-import { 
-  Phone, MapPin, Clock
-} from 'lucide-react';
-import BookingForm from '../component/bookurservice';
+import { Phone, MapPin, Clock } from 'lucide-react';
 import HeroForm from '../component/Home/HeroForm';
 
 const ContactFooter = () => {
@@ -10,16 +7,16 @@ const ContactFooter = () => {
     <div className="w-full bg-[#050a14] text-white font-sans overflow-hidden">
       
       {/* --- CONTACT US SECTION --- */}
-      <div className="relative pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 lg:px-8">
+      <div className="relative pt-28 sm:pt-32 md:pt-36 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 lg:px-8">
         
         {/* Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] sm:w-full h-[400px] sm:h-[500px] bg-blue-600/10 blur-[120px] rounded-full" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] sm:w-full h-[300px] sm:h-[400px] md:h-[500px] bg-blue-600/10 blur-[120px] rounded-full" />
         
         <div className="max-w-7xl mx-auto relative z-10">
           
           {/* Heading */}
-          <div className="text-center mb-12 sm:mb-16">
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-4 sm:mb-6 leading-tight">
+          <div className="text-center mb-10 sm:mb-14">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight mb-4 sm:mb-6 leading-tight">
               Contact{" "}
               <span className="bg-blue-600 px-4 sm:px-6 py-2 inline-block rounded-xl sm:rounded-2xl shadow-lg">
                 Us
@@ -32,19 +29,19 @@ const ContactFooter = () => {
           </div>
 
           {/* GRID */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 md:gap-10 items-start">
             
-            {/* LEFT SIDE */}
-            <div className="lg:col-span-5 space-y-5 sm:space-y-6">
+            {/* LEFT SIDE CARDS */}
+            <div className="lg:col-span-5 space-y-4 sm:space-y-6">
               
-              {/* CARD 1 */}
-              <div className="bg-[#0a1221] p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-white/5 hover:border-blue-500/30 transition-all group">
-                <div className="flex items-start gap-4 sm:gap-6">
-                  <div className="bg-blue-600 p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-lg group-hover:scale-110 transition-transform">
-                    <MapPin size={22} />
+              {/* Card 1 - Office */}
+              <div className="bg-[#0a1221] p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-white/5 hover:border-blue-500/30 transition-all group">
+                <div className="flex items-start gap-3 sm:gap-5">
+                  <div className="bg-blue-600 p-2.5 sm:p-3 rounded-xl sm:rounded-2xl shadow-lg group-hover:scale-110 transition-transform">
+                    <MapPin size={20} />
                   </div>
                   <div>
-                    <h4 className="text-blue-500 font-bold uppercase text-[10px] sm:text-xs tracking-widest mb-1 sm:mb-2">
+                    <h4 className="text-blue-500 font-bold uppercase text-[9px] sm:text-[10px] tracking-widest mb-1">
                       Our Office
                     </h4>
                     <p className="text-base sm:text-lg md:text-xl font-bold leading-snug">
@@ -54,14 +51,14 @@ const ContactFooter = () => {
                 </div>
               </div>
 
-              {/* CARD 2 */}
-              <div className="bg-[#0a1221] p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-white/5 hover:border-blue-500/30 transition-all group">
-                <div className="flex items-start gap-4 sm:gap-6">
-                  <div className="bg-blue-600 p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-lg group-hover:scale-110 transition-transform">
-                    <Phone size={22} />
+              {/* Card 2 - Phone */}
+              <div className="bg-[#0a1221] p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-white/5 hover:border-blue-500/30 transition-all group">
+                <div className="flex items-start gap-3 sm:gap-5">
+                  <div className="bg-blue-600 p-2.5 sm:p-3 rounded-xl sm:rounded-2xl shadow-lg group-hover:scale-110 transition-transform">
+                    <Phone size={20} />
                   </div>
                   <div>
-                    <h4 className="text-blue-500 font-bold uppercase text-[10px] sm:text-xs tracking-widest mb-1 sm:mb-2">
+                    <h4 className="text-blue-500 font-bold uppercase text-[9px] sm:text-[10px] tracking-widest mb-1">
                       Call Us Anytime
                     </h4>
                     <p className="text-base sm:text-lg md:text-xl font-bold">
@@ -71,14 +68,14 @@ const ContactFooter = () => {
                 </div>
               </div>
 
-              {/* CARD 3 */}
-              <div className="bg-[#0a1221] p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-white/5 hover:border-blue-500/30 transition-all group">
-                <div className="flex items-start gap-4 sm:gap-6">
-                  <div className="bg-blue-600 p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-lg group-hover:scale-110 transition-transform">
-                    <Clock size={22} />
+              {/* Card 3 - Business Hours */}
+              <div className="bg-[#0a1221] p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-white/5 hover:border-blue-500/30 transition-all group">
+                <div className="flex items-start gap-3 sm:gap-5">
+                  <div className="bg-blue-600 p-2.5 sm:p-3 rounded-xl sm:rounded-2xl shadow-lg group-hover:scale-110 transition-transform">
+                    <Clock size={20} />
                   </div>
                   <div>
-                    <h4 className="text-blue-500 font-bold uppercase text-[10px] sm:text-xs tracking-widest mb-1 sm:mb-2">
+                    <h4 className="text-blue-500 font-bold uppercase text-[9px] sm:text-[10px] tracking-widest mb-1">
                       Business Hours
                     </h4>
                     <p className="text-gray-300 font-bold text-sm sm:text-base">
@@ -94,8 +91,8 @@ const ContactFooter = () => {
             </div>
 
             {/* RIGHT SIDE FORM */}
-            <div className="lg:col-span-7 w-full">
-              <div className="w-full max-w-2xl mx-auto lg:ml-auto">
+            <div className="lg:col-span-7 w-full mt-8 lg:mt-0">
+              <div className="w-full max-w-md sm:max-w-lg md:max-w-xl mx-auto lg:ml-auto">
                 <HeroForm />
               </div>
             </div>

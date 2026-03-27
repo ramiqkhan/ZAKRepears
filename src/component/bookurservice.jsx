@@ -3,6 +3,7 @@ import {
   User, Phone, Calendar, ChevronDown, 
   MapPin, ShieldCheck, Clock, Hammer
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ProfessionalServicePage = () => {
   return (
@@ -21,24 +22,33 @@ const ProfessionalServicePage = () => {
               Professional Home Repair  
               <span className="font-light opacity-90"> & Maintenance Services</span>
             </h1>
-
+<p className="text-sm sm:text-base md:text-lg text-blue-400 font-semibold">
+  Free Consultation for First Time Customers!
+</p>
             {/* ✅ services left */}
             <div className="flex flex-wrap justify-start gap-2 text-gray-400 text-sm sm:text-base">
-              <span>Plumbing</span>
-              <span className="text-blue-500">•</span>
+             <span className="text-blue-500">•</span>
               <span>Electrical</span>
               <span className="text-blue-500">•</span>
-              <span>Remodeling</span>
+              <span>Plumbing</span>
               <span className="text-blue-500">•</span>
-              <span>Garage Door Repair</span>
+              <span>HVAC</span>
+              <span className="text-blue-500">•</span>
+              <span>Painting Services</span>
+              <span className="text-blue-500">•</span>
+              <span>Roofing Services</span>
             </div>
 
             {/* ✅ buttons same line mobile */}
             <div className="flex gap-3 justify-start">
 
-              <button className="flex-1 px-3 sm:px-4 py-3 bg-gradient-to-r from-[#00d2ff] via-[#0072ff] to-[#0033aa] text-white font-bold rounded-xl text-xs sm:text-base whitespace-nowrap">
-                Get Free Estimate
-              </button>
+  <Link
+  to="/contact"
+  className="flex-1 w-full px-3 sm:px-4 py-3 bg-gradient-to-r from-[#00d2ff] via-[#0072ff] to-[#0033aa] text-white font-bold rounded-xl text-xs sm:text-base whitespace-nowrap 
+             text-center hover:brightness-110 transition-all"
+>
+  Get Free Estimate
+</Link>
 
               <a 
                 href="tel:+12812502592"
