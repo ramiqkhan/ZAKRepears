@@ -184,14 +184,28 @@ const HeroForm = () => {
               </div>
             )}
           </div>
-          <div className="relative group">
-            <Calendar className={iconClasses} size={20} />
-            <input type="date" name="date" className={`${inputClasses} [color-scheme:dark] cursor-pointer`} value={formData.date} onChange={handleChange} />
-          </div>
-          <div className="relative group">
-            <MapPin className={iconClasses} size={20} />
-            <input type="text" name="address" placeholder="Your Address" className={inputClasses} value={formData.address} onChange={handleChange} />
-          </div>
+       <div className="relative group">
+  <Calendar className={iconClasses} size={20} />
+  <input
+    type="date"
+    name="date"
+    className={`${inputClasses} [color-scheme:dark] cursor-pointer text-xs sm:text-sm md:text-base py-3 sm:py-4`}
+    value={formData.date}
+    onChange={handleChange}
+  />
+</div>
+
+<div className="relative group">
+  <MapPin className={iconClasses} size={20} />
+  <input
+    type="text"
+    name="address"
+    placeholder="Your Address"
+    className={`${inputClasses} text-xs sm:text-sm md:text-base py-3 sm:py-4`}
+    value={formData.address}
+    onChange={handleChange}
+  />
+</div>
 
           <button className="w-full bg-blue-600 hover:bg-blue-500 text-white py-5 rounded-xl font-black text-lg sm:text-xl shadow-[0_10px_30px_rgba(37,99,235,0.3)] mt-4 transition-all active:scale-[0.96] tracking-widest uppercase" disabled={loading}>
             {loading ? "Booking..." : "Book Appointment"}
