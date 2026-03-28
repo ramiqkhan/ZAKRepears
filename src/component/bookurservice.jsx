@@ -4,6 +4,7 @@ import {
   MapPin, ShieldCheck, Clock, Hammer
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import HeroForm from './Home/HeroForm';
 
 const ProfessionalServicePage = () => {
   return (
@@ -15,7 +16,7 @@ const ProfessionalServicePage = () => {
           
           {/* LEFT */}
           {/* ❌ text-center hata diya */}
-          <div className="w-full lg:flex-1 space-y-6 text-left">
+       <div className="w-full lg:flex-1 space-y-6 text-left lg:-mt-30">
             
             {/* ✅ heading left */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight text-left">
@@ -68,44 +69,7 @@ const ProfessionalServicePage = () => {
             <div className="absolute -inset-6 bg-blue-600/10 blur-[80px] rounded-full"></div>
 
             {/* FORM */}
-            <div className="relative bg-[#0a1221]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl">
-
-              <h2 className="text-xl sm:text-2xl font-bold text-center mb-6 uppercase">
-                Book Your Service
-              </h2>
-
-              <form className="space-y-4">
-
-                <Input icon={<User size={18} />} placeholder="Your Name" />
-                <Input icon={<Phone size={18} />} placeholder="Phone Number" />
-<div className="relative">
-  <ShieldCheck className="absolute left-4 top-1/2 -translate-y-1/2 text-blue-600" size={18} />
-  
-  <select className="w-full bg-white text-gray-800 rounded-lg py-3 pl-11 pr-10 font-semibold outline-none appearance-none">
-    <option>Select Service</option>
-    <option>Electrical</option>
-    <option>Plumbing</option>
-        <option>HVAC</option>
-    <option>Painting Services</option>
-    <option>Roofing Services</option>
-    <option>Interior Repairs & Touch-Ups</option>
-      <option>Accent Walls</option>
-    <option>Carpentry</option>
-    <option>Drywall Installation & Repair</option>
-  </select>
-
-  <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 pointer-events-none" size={18} />
-</div>
-
-                <Input icon={<Calendar size={18} />} placeholder="Preferred Date" />
-                <Input icon={<MapPin size={18} />} placeholder="Your Address" />
-
-                <button className="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-lg font-bold text-lg transition">
-                  Book Appointment
-                </button>
-
-              </form>
-            </div>
+          <HeroForm/>
 
             {/* STATS */}
             <div className="mt-8 space-y-6 text-center">
