@@ -184,12 +184,12 @@ const HeroForm = () => {
               </div>
             )}
           </div>
-       <div className="relative group">
+<div className="relative group overflow-hidden">
   <Calendar className={iconClasses} size={20} />
   <input
     type="date"
     name="date"
-    className={`${inputClasses} [color-scheme:dark] cursor-pointer text-xs sm:text-sm md:text-base py-3 sm:py-4`}
+    className={`${inputClasses} w-full min-w-0 pr-4 sm:pr-4`}
     value={formData.date}
     onChange={handleChange}
   />
