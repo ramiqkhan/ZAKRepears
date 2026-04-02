@@ -52,21 +52,35 @@ const ContactFooter = () => {
               </div>
 
               {/* Card 2 - Phone */}
-              <div className="bg-[#0a1221] p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-white/5 hover:border-blue-500/30 transition-all group">
-                <div className="flex items-start gap-3 sm:gap-5">
-                  <div className="bg-blue-600 p-2.5 sm:p-3 rounded-xl sm:rounded-2xl shadow-lg group-hover:scale-110 transition-transform">
-                    <Phone size={20} />
-                  </div>
-                  <div>
-                    <h4 className="text-blue-500 font-bold uppercase text-[9px] sm:text-[10px] tracking-widest mb-1">
-                      Call Us Anytime
-                    </h4>
-                    <p className="text-base sm:text-lg md:text-xl font-bold">
-                      +1 (281) 250-2592
-                    </p>
-                  </div>
-                </div>
-              </div>
+   <div className="bg-[#0a1221]/80 backdrop-blur-sm p-5 sm:p-7 rounded-2xl border border-white/10 hover:border-blue-500/50 hover:bg-[#0d172a] transition-all duration-300 group shadow-xl">
+  <div className="flex items-center gap-4 sm:gap-6">
+    {/* Icon Container with subtle glow */}
+    <div className="relative">
+      <div className="absolute inset-0 bg-blue-500 blur-lg opacity-20 group-hover:opacity-40 transition-opacity"></div>
+      <div className="relative bg-gradient-to-br from-blue-500 to-blue-700 p-3.5 rounded-xl shadow-lg group-hover:scale-105 transition-transform duration-300 flex items-center justify-center">
+        <Phone size={22} className="text-white" />
+      </div>
+    </div>
+
+    <div className="flex flex-col gap-0.5">
+      {/* Availability Label */}
+      <div className="flex items-center gap-2">
+        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <h4 className="text-blue-400 font-semibold uppercase text-[10px] sm:text-[11px] tracking-[0.15em]">
+          Available 8AM — 6AM
+        </h4>
+      </div>
+
+      {/* Phone Number with hover effect */}
+      <a 
+        href="tel:+12812502592" 
+        className="text-lg sm:text-xl md:text-2xl font-bold text-white hover:text-blue-400 transition-colors tracking-tight"
+      >
+        +1 (281) 250-2592
+      </a>
+    </div>
+  </div>
+</div>
 
               {/* Card 3 - Business Hours */}
               <div className="bg-[#0a1221] p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-white/5 hover:border-blue-500/30 transition-all group">
@@ -79,7 +93,7 @@ const ContactFooter = () => {
                       Business Hours
                     </h4>
                     <p className="text-gray-300 font-bold text-sm sm:text-base">
-                      7 days on service <br /> 8 AM – 6 PM
+                      Daily Support Available<br /> 8 AM – 6 PM
                     </p>
                 
                   </div>
