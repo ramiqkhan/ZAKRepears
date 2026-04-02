@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { 
   MapPin, Phone, Mail, Facebook, 
-  Instagram, Twitter, ChevronRight 
+  Instagram, ChevronRight 
 } from 'lucide-react';
 // Assets folder se aapka logo
 import logoImage from '../assets/logo.jpeg'; 
@@ -26,12 +27,18 @@ const Footer = () => {
             <p className="text-gray-400 leading-relaxed font-medium">
               Reliable home repair and maintenance services serving Rosenberg and the greater Houston area.
             </p>
+
+            {/* Social Links */}
             <div className="flex gap-4">
-              {[Facebook, Instagram, Twitter].map((Icon, i) => (
-                <div key={i} className="p-3 bg-white/5 rounded-xl text-blue-500 hover:bg-blue-600 hover:text-white transition-all cursor-pointer group shadow-lg">
-                  <Icon size={20} className="group-hover:scale-110 transition-transform" />
-                </div>
-              ))}
+              <a href="https://www.facebook.com/profile.php?id=61577062507977&sk=about" target="_blank" rel="noopener noreferrer"
+                className="p-3 bg-white/5 rounded-xl text-blue-500 hover:bg-blue-600 hover:text-white transition-all cursor-pointer group shadow-lg">
+                <Facebook size={20} className="group-hover:scale-110 transition-transform" />
+              </a>
+
+              <a href="https://www.instagram.com/houstoneasyrepairs/" target="_blank" rel="noopener noreferrer"
+                className="p-3 bg-white/5 rounded-xl text-blue-500 hover:bg-blue-600 hover:text-white transition-all cursor-pointer group shadow-lg">
+                <Instagram size={20} className="group-hover:scale-110 transition-transform" />
+              </a>
             </div>
           </div>
 
@@ -42,12 +49,25 @@ const Footer = () => {
               <span className="absolute -bottom-2 left-0 w-12 h-1 bg-blue-600 rounded-full"></span>
             </h4>
             <ul className="space-y-4 pt-4 text-gray-400 font-bold">
-              {["Home", "About Us", "Services", "Contact"].map((link) => (
-                <li key={link} className="hover:text-blue-500 transition-colors cursor-pointer flex items-center gap-2 group">
-                  <ChevronRight size={14} className="text-blue-500 opacity-0 group-hover:opacity-100 -ml-4 group-hover:ml-0 transition-all" />
-                  {link}
-                </li>
-              ))}
+              <li className="hover:text-blue-500 transition-colors cursor-pointer flex items-center gap-2 group">
+                <ChevronRight size={14} className="text-blue-500 opacity-0 group-hover:opacity-100 -ml-4 group-hover:ml-0 transition-all" />
+                <Link to="/">Home</Link>
+              </li>
+
+              <li className="hover:text-blue-500 transition-colors cursor-pointer flex items-center gap-2 group">
+                <ChevronRight size={14} className="text-blue-500 opacity-0 group-hover:opacity-100 -ml-4 group-hover:ml-0 transition-all" />
+                <Link to="/about">About Us</Link>
+              </li>
+
+              <li className="hover:text-blue-500 transition-colors cursor-pointer flex items-center gap-2 group">
+                <ChevronRight size={14} className="text-blue-500 opacity-0 group-hover:opacity-100 -ml-4 group-hover:ml-0 transition-all" />
+                <Link to="/services">Services</Link>
+              </li>
+
+              <li className="hover:text-blue-500 transition-colors cursor-pointer flex items-center gap-2 group">
+                <ChevronRight size={14} className="text-blue-500 opacity-0 group-hover:opacity-100 -ml-4 group-hover:ml-0 transition-all" />
+                <Link to="/contact">Contact</Link>
+              </li>
             </ul>
           </div>
 

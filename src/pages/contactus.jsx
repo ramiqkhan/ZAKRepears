@@ -79,7 +79,7 @@ const ContactFooter = () => {
                       Business Hours
                     </h4>
                     <p className="text-gray-300 font-bold text-sm sm:text-base">
-                      7 days on service
+                      7 days on service <br /> 8 AM – 6 PM
                     </p>
                 
                   </div>
