@@ -100,7 +100,7 @@ const Footer = () => {
             <div className="space-y-5 pt-4 text-gray-400">
               <div className="flex items-start gap-4 group">
                 <MapPin size={20} className="text-blue-500 shrink-0 group-hover:animate-bounce" />
-                <p className="font-bold leading-tight">4925 Avenue H Suite A, <br />Rosenberg, TX 77471</p>
+                <p className="font-bold leading-tight"> 4925 Avenue H, Rosenberg,  <br />  TX 77471 Suite 1120</p>
               </div>
               <div className="flex items-center gap-4 group">
                 <Phone size={20} className="text-blue-500 shrink-0 group-hover:rotate-12 transition-transform" />
