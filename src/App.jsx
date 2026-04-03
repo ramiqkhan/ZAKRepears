@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Navbar from "./component/navbar";
 import Footer from "./component/footer";
 
@@ -8,9 +9,24 @@ import ContactFooter from "./pages/contactus";
 import Service from "./pages/service";
 import Location from "./pages/location";
 
+// --- SCROLL TO TOP LOGIC ---
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Ye line page load hote hi view ko top par shift kar degi
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   return (
     <BrowserRouter>
+      {/* ScrollToTop ko BrowserRouter ke andar hona zaroori hai */}
+      <ScrollToTop />
+      
       <Navbar />
       
       <Routes>
@@ -20,7 +36,6 @@ function App() {
         <Route path="/contact" element={<ContactFooter />} />
         
         {/* UPDATED DYNAMIC ROUTE */}
-        {/* This ":city" allows the page to change content based on the URL */}
         <Route path="/location/:city" element={<Location />} />
         
         {/* Optional: Keep a general locations page if needed */}

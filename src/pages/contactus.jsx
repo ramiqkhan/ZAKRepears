@@ -45,7 +45,7 @@ const ContactFooter = () => {
                       Our Office
                     </h4>
                     <p className="text-base sm:text-lg md:text-xl font-bold leading-snug">
-                      4925 Avenue H Suite A <br /> Rosenberg, TX 77471
+                   4925 Avenue H, Rosenberg,  <br />  TX 77471 Suite 1120
                     </p>
                   </div>
                 </div>
