@@ -64,7 +64,7 @@ function Navbar() {
               onMouseEnter={() => setDesktopLocationOpen(true)}
               onMouseLeave={() => setDesktopLocationOpen(false)}
             >
-              <button className={`flex items-center gap-1 font-bold border-b-2 pb-1 border-transparent transition-all duration-300 h-full ${
+              <button className={`flex items-center gap-1 uppercase font-bold border-b-2 pb-1 border-transparent transition-all duration-300 h-full ${
                 isScrolled ? "text-white hover:text-blue-400" : "text-gray-700 hover:text-blue-600"
               }`}>
                 Locations <FaChevronDown className={`text-xs opacity-70 transition-transform ${desktopLocationOpen ? 'rotate-180' : ''}`} />
@@ -145,7 +145,7 @@ function Navbar() {
             <div>
               <button
                 onClick={() => setMobileLocationOpen(!mobileLocationOpen)}
-                className="flex items-center justify-between w-full py-2 font-bold border-b border-transparent"
+                className="flex items-center justify-between uppercase w-full py-2 font-bold border-b border-transparent"
               >
                 Locations <FaChevronDown className={`transition-transform ${mobileLocationOpen ? "rotate-180" : ""}`} />
               </button>
