@@ -104,7 +104,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-4 group">
                 <Phone size={20} className="text-blue-500 shrink-0 group-hover:rotate-12 transition-transform" />
-                <p className="font-bold">+1 (281) 250-2592</p>
+                <p className="font-bold">+1 (346) 603-4582</p>
               </div>
               <div className="flex items-center gap-4">
                 <Mail size={20} className="text-blue-500 shrink-0" />
