@@ -73,10 +73,10 @@ const ContactFooter = () => {
 
       {/* Phone Number with hover effect */}
       <a 
-        href="tel:+12812502592" 
+        href="tel:+13466034582" 
         className="text-lg sm:text-xl md:text-2xl font-bold text-white hover:text-blue-400 transition-colors tracking-tight"
       >
-        +1 (281) 250-2592
+        +1 (346) 603-4582
       </a>
     </div>
   </div>

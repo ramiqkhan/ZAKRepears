@@ -48,7 +48,7 @@ const ProfessionalServicePage = () => {
               </Link>
 
               <a 
-                href="tel:+12812502592"
+                href="tel:+13466034582"
                 className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-white text-black 
                            font-bold rounded-xl text-sm sm:text-base
                            transition-all duration-300 hover:scale-105"
@@ -95,7 +95,7 @@ const ProfessionalServicePage = () => {
               {/* RIGHT BUTTONS */}
               <div className="flex gap-3 mt-4 relative z-50">
                 <a 
-                  href="tel:+12812502592"
+                  href="tel:+13466034582"
                   className="relative z-50 w-full flex items-center justify-center gap-2 bg-[#16327a] py-3 rounded-lg font-bold text-sm 
                              transition-all duration-300 hover:bg-[#1e3d8f] hover:scale-105 active:scale-95"
                 >

@@ -100,7 +100,7 @@ function Navbar() {
             </Link>
 
             <a
-              href="tel:+12812502592"
+              href="tel:+13466034582"
               className={`p-3 rounded-xl transition ${
                 isScrolled ? "bg-white/10 text-white" : "bg-gray-100 text-blue-600"
               }`}

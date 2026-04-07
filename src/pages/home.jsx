@@ -50,7 +50,7 @@ const Home = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-              <a href="tel:+12812502592" className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl font-bold flex items-center gap-2 transition">
+              <a href="tel:+13466034582" className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl font-bold flex items-center gap-2 transition">
                 <Phone size={18} /> Call Today
               </a>
 
@@ -123,8 +123,8 @@ const Home = () => {
               "Quality workmanship, reliable service."
             </p>
 
-            <a href="tel:+12812502592" className="bg-white text-blue-600 px-6 py-3 rounded-xl font-bold inline-flex items-center gap-2 hover:scale-105 transition">
-              <Phone size={18} /> +1 (281) 250-2592
+            <a href="tel:+13466034582" className="bg-white text-blue-600 px-6 py-3 rounded-xl font-bold inline-flex items-center gap-2 hover:scale-105 transition">
+              <Phone size={18} /> +1 (346) 603-4582
             </a>
           </div>
 
