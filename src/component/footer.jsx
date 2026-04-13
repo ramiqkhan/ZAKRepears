@@ -114,18 +114,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Copyright */}
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-gray-500 font-bold uppercase tracking-widest text-[10px] md:text-xs">
-            © 2026 Houston Easy Repairs. All Rights Reserved.
-          </p>
-          <div className="flex items-center gap-2">
-            <div className="h-[1px] w-8 bg-white/10"></div>
-            <p className="text-gray-600 text-[10px] font-black uppercase tracking-[0.3em]">
-              Designed with Precision
-            </p>
-          </div>
-        </div>
+    
       </div>
     </footer>
   );
