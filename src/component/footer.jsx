@@ -114,7 +114,12 @@ const Footer = () => {
           </div>
         </div>
 
-    
+    {/* Bottom Copyright */}
+<div className="border-t border-white/10 mt-12 pt-6 px-2">
+  <p className="text-xs tracking-widest uppercase text-gray-500 font-semibold">
+    © {new Date().getFullYear()} Houston Easy Repairs. All rights reserved.
+  </p>
+</div>
       </div>
     </footer>
   );
