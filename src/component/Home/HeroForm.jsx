@@ -62,12 +62,12 @@ const HeroForm = () => {
 
   // INPUT STYLES
   const inputClasses =
-    "w-full box-border bg-[#050a14] text-white border border-white/10 rounded-xl " +
-    "py-3.5 sm:py-4 pl-11 sm:pl-12 pr-3 sm:pr-4 " +
-    "font-medium outline-none text-sm sm:text-base " +
-    "transition-all duration-300 " +
-    "placeholder:text-gray-600 placeholder:font-medium " +
-    "focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10";
+  "w-full box-border bg-[#050a14] text-white border border-white/10 rounded-xl " +
+  "py-3.5 sm:py-4 pl-11 sm:pl-12 pr-3 sm:pr-4 " +
+  "font-medium outline-none text-base sm:text-base " +
+  "transition-all duration-300 " +
+  "placeholder:text-gray-600 placeholder:font-medium " +
+  "focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10";
 
   const iconClasses =
     "absolute left-3.5 sm:left-4 top-1/2 -translate-y-1/2 " +
@@ -224,23 +224,24 @@ const HeroForm = () => {
       />
 
       {/* FORM CARD */}
-      <div
-        className="
-          relative
-          w-full
-          box-border
-          bg-[#0a1221]/90
-          backdrop-blur-3xl
-          border border-white/10
-          rounded-[1.5rem]
-          sm:rounded-[2.5rem]
-          p-4
-          sm:p-6
-          md:p-10
-          shadow-[0_20px_50px_rgba(0,0,0,0.6)]
-          overflow-visible
-        "
-      >
+     <div
+  className="
+    relative
+    z-[100]
+    w-full
+    box-border
+    bg-[#0a1221]/90
+    backdrop-blur-3xl
+    border border-white/10
+    rounded-[1.5rem]
+    sm:rounded-[2.5rem]
+    p-4
+    sm:p-6
+    md:p-10
+    shadow-[0_20px_50px_rgba(0,0,0,0.6)]
+    overflow-visible
+  "
+>
 
         {/* TOP LINE */}
         <div
@@ -474,75 +475,72 @@ const HeroForm = () => {
             </button>
 
             {/* DROPDOWN */}
-            {isOpen && (
-              <div
-                className="
-                  absolute
-                  top-full
-                  left-0
-                  right-0
-                  mt-2
-                  bg-[#0a1221]
-                  border border-white/10
-                  rounded-xl
-                  shadow-2xl
-                  overflow-hidden
-                  z-[100]
-                "
-              >
-                <div className="max-h-56 sm:max-h-60 overflow-y-auto overscroll-contain">
-                  {services.map((service) => (
-                    <button
-                      type="button"
-                      key={service}
-                      onClick={() => {
-                        setSelectedService(service);
-                        setIsOpen(false);
-                      }}
-                      className="
-                        w-full
-                        flex
-                        items-center
-                        justify-between
-                        gap-3
-                        px-4
-                        sm:px-6
-                        py-3.5
-                        sm:py-4
-                        text-left
-                        cursor-pointer
-                        transition-colors
-                        hover:bg-blue-600/10
-                      "
-                    >
-                      <span
-                        className={`
-                          text-[10px]
-                          sm:text-xs
-                          font-black
-                          uppercase
-                          tracking-wider
-                          ${
-                            selectedService === service
-                              ? "text-blue-500"
-                              : "text-gray-400"
-                          }
-                        `}
-                      >
-                        {service}
-                      </span>
+           {isOpen && (
+  <div
+    className="
+      absolute
+      left-0
+      right-0
+     bottom-full
+mb-2
+      z-[9999]
+      bg-[#0a1221]
+      border border-white/10
+      rounded-xl
+      shadow-2xl
+      overflow-hidden
+    "
+  >
+    <div className="max-h-60 overflow-y-auto overscroll-contain">
+      {services.map((service) => (
+        <button
+          type="button"
+          key={service}
+          onClick={() => {
+            setSelectedService(service);
+            setIsOpen(false);
+          }}
+          className="
+            w-full
+            flex
+            items-center
+            justify-between
+            gap-3
+            px-4
+            py-4
+            text-left
+            cursor-pointer
+            transition-colors
+            hover:bg-blue-600/10
+          "
+        >
+          <span
+            className={`
+              text-xs
+              font-black
+              uppercase
+              tracking-wider
+              ${
+                selectedService === service
+                  ? "text-blue-500"
+                  : "text-gray-400"
+              }
+            `}
+          >
+            {service}
+          </span>
 
-                      {selectedService === service && (
-                        <Check
-                          size={16}
-                          className="text-blue-500 flex-shrink-0"
-                        />
-                      )}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
+          {selectedService === service && (
+            <Check
+              size={16}
+              className="text-blue-500 flex-shrink-0"
+            />
+          )}
+        </button>
+      ))}
+    </div>
+  </div>
+)}
           </div>
 
           {/* ADDRESS */}

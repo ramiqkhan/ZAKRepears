@@ -4,8 +4,7 @@ import HeroForm from '../component/Home/HeroForm';
 
 const ContactFooter = () => {
   return (
-    <div className="w-full bg-[#050a14] text-white font-sans overflow-hidden">
-      
+<div className="w-full bg-[#050a14] text-white font-sans overflow-x-hidden">      
       {/* --- CONTACT US SECTION --- */}
       <div className="relative pt-28 sm:pt-32 md:pt-36 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 lg:px-8">
         
@@ -103,11 +102,11 @@ const ContactFooter = () => {
             </div>
 
             {/* RIGHT SIDE FORM */}
-            <div className="lg:col-span-7 w-full mt-8 lg:mt-0">
-              <div className="w-full max-w-md sm:max-w-lg md:max-w-xl mx-auto lg:ml-auto">
-                <HeroForm />
-              </div>
-            </div>
+          <div className="lg:col-span-7 w-full mt-8 lg:mt-0 relative z-[100]">
+  <div className="w-full max-w-md sm:max-w-lg md:max-w-xl mx-auto lg:ml-auto relative z-[100]">
+    <HeroForm />
+  </div>
+</div>
 
           </div>
         </div>
