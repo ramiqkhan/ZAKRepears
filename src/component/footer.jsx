@@ -72,24 +72,40 @@ const Footer = () => {
           </div>
 
           {/* Column 3: Our Services */}
-          <div className="space-y-6">
-            <h4 className="text-lg font-black uppercase tracking-widest text-white relative inline-block">
-              Our Services
-              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-blue-600 rounded-full"></span>
-            </h4>
-            <ul className="space-y-4 pt-4 text-gray-400 font-bold">
-              {[
-                "Electrical", "Plumbing ",  
-                "HVAC", "Painting Services", 
-                "Roofing Services","Carpentry", "Drywall Repair", "Accent Walls"," Interior Repairs & Touch-Ups"
-              ].map((service) => (
-                <li key={service} className="hover:text-blue-500 transition-colors cursor-pointer flex items-center gap-2 group">
-                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full group-hover:scale-150 transition-transform"></div>
-                  {service}
-                </li>
-              ))}
-            </ul>
-          </div>
+    <div className="space-y-6">
+  <h4 className="text-lg font-black uppercase tracking-widest text-white relative inline-block">
+    Our Services
+    <span className="absolute -bottom-2 left-0 w-12 h-1 bg-blue-600 rounded-full"></span>
+  </h4>
+
+  <ul className="space-y-4 pt-4 text-gray-400 font-bold">
+    {[
+      "Electrical",
+      "Plumbing",
+      "HVAC",
+      "Painting Services",
+      "Roofing Services",
+      "Carpentry",
+      "Drywall Repair",
+      "Accent Walls",
+      "Interior Repairs & Touch-Ups",
+    ].map((service) => (
+      <li
+        key={service}
+        className="transition-colors"
+      >
+        <Link
+          to="/services"
+          className="hover:text-blue-500 transition-colors cursor-pointer flex items-center gap-2 group"
+        >
+          <div className="w-1.5 h-1.5 bg-blue-500 rounded-full group-hover:scale-150 transition-transform"></div>
+
+          {service}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
 
           {/* Column 4: Location Info */}
           <div className="space-y-6">
