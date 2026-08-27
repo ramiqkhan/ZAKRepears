@@ -24,7 +24,6 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu when screen becomes desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
@@ -43,11 +42,11 @@ function Navbar() {
       "font-bold border-b-2 pb-1 transition-all duration-300";
 
     return isActive
-      ? `${base} text-blue-600 border-blue-600`
+      ? `${base} text-blue-500 border-blue-500`
       : `${base} border-transparent ${
           isScrolled
             ? "text-white hover:text-blue-400"
-            : "text-gray-700 hover:text-blue-600"
+            : "text-white hover:text-blue-400"
         }`;
   };
 
@@ -67,12 +66,17 @@ function Navbar() {
       {/* NAVBAR */}
       <nav
         className={`
-          fixed top-0 left-0 w-full z-50
-          transition-all duration-300
+          fixed
+          top-0
+          left-0
+          w-full
+          z-50
+          transition-all
+          duration-300
           ${
             isScrolled
-              ? "h-20 bg-[#050a14]/95 backdrop-blur-xl border-b border-white/10 shadow-lg"
-              : "h-20 bg-white border-b border-gray-200 shadow-sm"
+              ? "h-20 bg-[#050a14]/80 backdrop-blur-xl border-b border-white/10 shadow-lg"
+              : "h-20 bg-transparent border-b border-transparent"
           }
         `}
       >
@@ -118,23 +122,29 @@ function Navbar() {
               {/* LOCATIONS */}
               <div
                 className="relative"
-                onMouseEnter={() => setDesktopLocationOpen(true)}
-                onMouseLeave={() => setDesktopLocationOpen(false)}
+                onMouseEnter={() =>
+                  setDesktopLocationOpen(true)
+                }
+                onMouseLeave={() =>
+                  setDesktopLocationOpen(false)
+                }
               >
                 <button
                   type="button"
-                  className={`
-                    flex items-center gap-2
-                    uppercase font-bold
-                    border-b-2 border-transparent
+                  className="
+                    flex
+                    items-center
+                    gap-2
+                    uppercase
+                    font-bold
+                    border-b-2
+                    border-transparent
                     pb-1
-                    transition-all duration-300
-                    ${
-                      isScrolled
-                        ? "text-white hover:text-blue-400"
-                        : "text-gray-700 hover:text-blue-600"
-                    }
-                  `}
+                    text-white
+                    hover:text-blue-400
+                    transition-all
+                    duration-300
+                  "
                 >
                   Locations
 
@@ -236,17 +246,16 @@ function Navbar() {
               <a
                 href="tel:+13466034582"
                 aria-label="Call Houston Easy Repairs"
-                className={`
+                className="
                   p-3
                   rounded-xl
+                  bg-white/10
+                  text-white
+                  hover:bg-white/20
                   transition-all
                   duration-300
-                  ${
-                    isScrolled
-                      ? "bg-white/10 text-white hover:bg-white/20"
-                      : "bg-gray-100 text-blue-600 hover:bg-blue-100"
-                  }
-                `}
+                  backdrop-blur-md
+                "
               >
                 <FaPhoneAlt size={15} />
               </a>
@@ -260,6 +269,7 @@ function Navbar() {
                 type="button"
                 onClick={() => {
                   setMobileOpen(!mobileOpen);
+
                   if (mobileOpen) {
                     setMobileLocationOpen(false);
                   }
@@ -269,7 +279,7 @@ function Navbar() {
                     ? "Close menu"
                     : "Open menu"
                 }
-                className={`
+                className="
                   p-2.5
                   rounded-xl
                   transition-all
@@ -278,12 +288,11 @@ function Navbar() {
                   flex
                   items-center
                   justify-center
-                  ${
-                    isScrolled
-                      ? "bg-white/10 backdrop-blur-md border-white/20 text-white"
-                      : "bg-blue-600/10 border-blue-600/20 text-blue-600"
-                  }
-                `}
+                  bg-white/10
+                  backdrop-blur-md
+                  border-white/20
+                  text-white
+                "
               >
                 {mobileOpen ? (
                   <FaTimes size={21} />
@@ -301,7 +310,7 @@ function Navbar() {
       {/* MOBILE MENU */}
       {mobileOpen && (
         <div
-          className={`
+          className="
             lg:hidden
             fixed
             inset-x-0
@@ -312,15 +321,12 @@ function Navbar() {
             backdrop-blur-xl
             border-t
             shadow-2xl
-            ${
-              isScrolled
-                ? "bg-[#050a14]/98 border-white/10"
-                : "bg-white/98 border-gray-200"
-            }
-          `}
+            bg-[#050a14]/95
+            border-white/10
+          "
         >
           <div
-            className={`
+            className="
               flex
               flex-col
               px-6
@@ -331,19 +337,15 @@ function Navbar() {
               font-bold
               uppercase
               tracking-widest
-              ${
-                isScrolled
-                  ? "text-white"
-                  : "text-gray-800"
-              }
-            `}
+              text-white
+            "
           >
 
             {/* HOME */}
             <NavLink
               to="/"
               onClick={() => setMobileOpen(false)}
-              className="py-3 border-b border-gray-200/10"
+              className="py-3 border-b border-white/10"
             >
               Home
             </NavLink>
@@ -352,7 +354,7 @@ function Navbar() {
             <NavLink
               to="/services"
               onClick={() => setMobileOpen(false)}
-              className="py-3 border-b border-gray-200/10"
+              className="py-3 border-b border-white/10"
             >
               Services
             </NavLink>
@@ -361,13 +363,13 @@ function Navbar() {
             <NavLink
               to="/about"
               onClick={() => setMobileOpen(false)}
-              className="py-3 border-b border-gray-200/10"
+              className="py-3 border-b border-white/10"
             >
               About
             </NavLink>
 
-            {/* MOBILE LOCATIONS */}
-            <div className="border-b border-gray-200/10 pb-2">
+            {/* LOCATIONS */}
+            <div className="border-b border-white/10 pb-2">
 
               <button
                 type="button"
@@ -376,7 +378,15 @@ function Navbar() {
                     !mobileLocationOpen
                   )
                 }
-                className="flex items-center justify-between w-full py-3 uppercase font-bold"
+                className="
+                  flex
+                  items-center
+                  justify-between
+                  w-full
+                  py-3
+                  uppercase
+                  font-bold
+                "
               >
                 Locations
 
@@ -400,20 +410,17 @@ function Navbar() {
                     <Link
                       key={loc}
                       to={locationPath(loc)}
-                      className={`
+                      className="
                         block
                         py-3
                         px-4
                         rounded-xl
                         text-xs
                         tracking-wider
+                        bg-white/5
+                        hover:bg-blue-600
                         transition-all
-                        ${
-                          isScrolled
-                            ? "bg-white/5 hover:bg-blue-600"
-                            : "bg-gray-100 hover:bg-blue-600 hover:text-white"
-                        }
-                      `}
+                      "
                       onClick={() => {
                         setMobileOpen(false);
                         setMobileLocationOpen(false);
@@ -431,7 +438,7 @@ function Navbar() {
             <NavLink
               to="/contact"
               onClick={() => setMobileOpen(false)}
-              className="py-3 border-b border-gray-200/10"
+              className="py-3 border-b border-white/10"
             >
               Contact
             </NavLink>
@@ -470,7 +477,7 @@ function Navbar() {
                 rounded-2xl
                 border
                 border-blue-600/20
-                text-blue-600
+                text-blue-400
                 bg-blue-600/5
                 transition-all
               "

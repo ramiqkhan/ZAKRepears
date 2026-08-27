@@ -6,7 +6,12 @@ import {
 } from 'lucide-react';
 // Assets folder se aapka logo
 import logoImage from '../assets/logo.jpeg'; 
-
+const goToServicesTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
 const Footer = () => {
   return (
     <footer className="bg-[#050a14] pt-24 pb-12 px-6 border-t border-white/5 relative">
@@ -72,9 +77,10 @@ const Footer = () => {
           </div>
 
           {/* Column 3: Our Services */}
-    <div className="space-y-6">
+  <div className="space-y-6">
   <h4 className="text-lg font-black uppercase tracking-widest text-white relative inline-block">
     Our Services
+
     <span className="absolute -bottom-2 left-0 w-12 h-1 bg-blue-600 rounded-full"></span>
   </h4>
 
@@ -90,12 +96,10 @@ const Footer = () => {
       "Accent Walls",
       "Interior Repairs & Touch-Ups",
     ].map((service) => (
-      <li
-        key={service}
-        className="transition-colors"
-      >
+      <li key={service}>
         <Link
           to="/services"
+          onClick={goToServicesTop}
           className="hover:text-blue-500 transition-colors cursor-pointer flex items-center gap-2 group"
         >
           <div className="w-1.5 h-1.5 bg-blue-500 rounded-full group-hover:scale-150 transition-transform"></div>

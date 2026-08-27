@@ -67,7 +67,7 @@ const ContactFooter = () => {
       <div className="flex items-center gap-2">
         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
         <h4 className="text-blue-400 font-semibold uppercase text-[10px] sm:text-[11px] tracking-[0.15em]">
-          Available 8AM — 6AM
+          Available 8PM — 6PM
         </h4>
       </div>
 
